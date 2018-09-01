@@ -116,7 +116,7 @@ $ sudo make install
 
 ### Build Cyrus
 https://cyrusimap.org/sasl/sasl/installation.html#quick-install-guide
-in my case I installed cyrus-sasl-2.1.27-rc8
+in my case I've installed cyrus-sasl-2.1.27-rc8
 ftp://ftp.cyrusimap.org/cyrus-sasl/cyrus-sasl-2.1.27-rc8.tar.gz
 
 ```shell
@@ -142,7 +142,7 @@ You should already see headers included in Build Settings>Header Search Paths as
 ../../../addons/ofxMongo/src
 ../../../addons/ofxMongo/include
 
-![Link Binary with Libraries ](LinkBinaryWithLibraries.png)
+![alt text](https://github.com/robertofazio/ofxMongo/blob/master/%20LinkBinaryWithLibraries.png?raw=true)
 
 **mongo driver installation**
 
