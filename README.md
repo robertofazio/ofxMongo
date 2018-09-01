@@ -237,7 +237,7 @@ You should already see headers included in Build Settings>Header Search Paths as
 ../../../addons/ofxMongo/src
 ../../../addons/ofxMongo/include
 
-![alt text](https://github.com/robertofazio/ofxMongo/blob/master/%20HeaderSearchPath.png?raw=true)
+![alt text](https://github.com/robertofazio/ofxMongo/blob/master/HeaderSearchPath.png?raw=true)
 
 
 
