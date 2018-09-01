@@ -57,9 +57,11 @@ In addiction, if you want a GUI for MongoDB install MongoDB Compass for Mac, Lin
 
 [MongoDB Compass](https://www.mongodb.com/products/compass)
 
-# Installation 
+# Dependencies 
 
-You have to install mongo-c and mongo-cxx 
+LINUX : mongo-c , mongo-cxx 
+MAC : mongo-c , mongo-cxx , Cyrus , Snappy
+WIN : not yet tested
 
 ## ** Linux **
 
@@ -126,34 +128,13 @@ make
 sudo make install
 ```
 
-### XCODE 9 Project Configuration
-
-Use projectGenerator adding ofxMongo.
-
-Add Cyrus SASL framework to XCODE project:
-General>Linked Frameworks and Libraries
-add libsasl2.tbd
-
-Add resolv
-General>Linked Frameworks and Libraries
-add libresolv.9.tbd
-
-You should already see headers included in Build Settings>Header Search Paths as
-../../../addons/ofxMongo/src
-../../../addons/ofxMongo/include
-
-![alt text](https://github.com/robertofazio/ofxMongo/blob/master/%20LinkBinaryWithLibraries.png?raw=true)
-
 **mongo driver installation**
 
 The headers included in this addon were copied from:
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx
-
 /usr/local/include/mongocxx/v_noabi/mongocxx
-
 /usr/local/include/libbson-1.0
-
 /usr/local/include/libmongoc-1.0
 
 and
@@ -224,6 +205,41 @@ $ sudo make EP_mnmlstc_core
 $ make
 $ sudo make install
 ```
+### Install Snappy
+
+Snappy is a compression/decompression library
+https://github.com/google/snappy
+
+```shell
+$ git clone https://github.com/google/snappy.git
+```
+Build Snappy - You need CMake 3.4 or above to build
+```shell
+$ mkdir build cd build && cmake ../ && make
+```
+
+
+### XCODE 9 Project Configuration Set-up
+
+Use projectGenerator adding ofxMongo.
+Once you have installed all the libs you have to add the frameworks to Xcode project
+
+in Xcode under Build Phase -> Linked Frameworks and Libraries
+
+Add Cyrus SASL : libsasl2.tbd
+Add resolv : libresolv.9.tbd
+Add Snappy : libsnappy.a
+
+![alt text](https://github.com/robertofazio/ofxMongo/blob/master/%20LinkBinaryWithLibraries.png?raw=true)
+
+
+You should already see headers included in Build Settings>Header Search Paths as
+../../../addons/ofxMongo/src
+../../../addons/ofxMongo/include
+
+![alt text](https://github.com/robertofazio/ofxMongo/blob/master/%20HeaderSearchPath.png?raw=true)
+
+
 
 
 
