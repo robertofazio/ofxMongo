@@ -48,7 +48,7 @@ void ofApp::keyPressed(int key)
 Just follow the official MongoDB instruction
 
 
-[a link](https://docs.mongodb.com/manual/installation/)
+[MongoDB installation](https://docs.mongodb.com/manual/installation/)
 
 ## ** Linux **
 
