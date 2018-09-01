@@ -1,36 +1,4 @@
-# ofxMongo
-
-OpenFrameworks 0.10.0 addons to connect with mongoDB server created by Studio Roberto Fazio 2018
-Work in progress project
-Actually the addon allows you just to connect to MongoDB and insert one record.
-
-Very short documentation ( I will work on it soon ) 
-
-in the ofApp.h file
-```shell
-#include "ofxMongo.h" 
-ofxMongo mongoclient;
-```
-
-in the ofApp.cpp
-```shell
-void ofApp::setup()
-{
-    mongoclient.hello_mongo();
-}
-```
-
-insert record
-```shell
-void ofApp::keyPressed(int key)
-{
-    if(key == '1')
-    {
-        int rnd = ofRandom(0.0f, 1000.0f);
-        mongoclient.insert("myRandomField", ofToString(rnd));
-    }
-}
-```
+# Addon to connect with mongoDB server
 
 ## ** Linux ** 
 
@@ -81,7 +49,7 @@ $ sudo make install
 
 /usr/local/include/* headers and /usr/local/lib/* static libraries are linked through the ADDON_PKG_CONFIG_LIBRARIES directive (addon_config.mk)
 
-## ** OSX 10.13 ** 
+## ** OSX ** 
 
 ## Prerequisites
 
@@ -95,7 +63,7 @@ make
 sudo make install
 ```
 
-### XCODE 9 Project 
+### XCODE Project
 
 Use projectGenerator adding ofxMongo.
 
