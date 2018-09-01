@@ -118,7 +118,9 @@ $ sudo make install
 
 ### Build Cyrus
 https://cyrusimap.org/sasl/sasl/installation.html#quick-install-guide
+
 in my case I've installed cyrus-sasl-2.1.27-rc8
+
 ftp://ftp.cyrusimap.org/cyrus-sasl/cyrus-sasl-2.1.27-rc8.tar.gz
 
 ```shell
@@ -126,31 +128,8 @@ cd (directory it was untarred into)
 ./configure
 make
 sudo make install
+ln -s /usr/local/lib/sasl2 /usr/lib/sasl2
 ```
-
-**mongo driver installation**
-
-The headers included in this addon were copied from:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx
-/usr/local/include/mongocxx/v_noabi/mongocxx
-/usr/local/include/libbson-1.0
-/usr/local/include/libmongoc-1.0
-
-and
-
-/usr/local/opt/openssl/include/openssl
-
-The static libraries included in this addon were copied from:
-
-/usr/local/lib/
-
-and
-
-/usr/local/opt/openssl/lib/libcrypto.a
-/usr/local/opt/openssl/lib/libssl.a
-
-If you need/want to build your own libraries, follow steps below then copy the files from OS into the addon.
 
 ### Install mongo-c
 
@@ -217,7 +196,23 @@ Build Snappy - You need CMake 3.4 or above to build
 ```shell
 $ mkdir build cd build && cmake ../ && make
 ```
+**mongo driver installation note **
 
+The headers included in this addon were copied from:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx
+/usr/local/include/mongocxx/v_noabi/mongocxx
+/usr/local/include/libbson-1.0
+/usr/local/include/libmongoc-1.0
+/usr/local/opt/openssl/include/openssl
+
+The static libraries included in this addon were copied from:
+
+/usr/local/lib/
+/usr/local/opt/openssl/lib/libcrypto.a
+/usr/local/opt/openssl/lib/libssl.a
+
+If you need/want to build your own libraries, follow steps above then copy the files from OS into the addon.
 
 ### XCODE 9 Project Configuration Set-up
 
