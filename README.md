@@ -1,40 +1,54 @@
-# ofxMongo
+# Introduction
 
-OpenFrameworks addons to connect with mongoDB server created by Studio Roberto Fazio 2018
-Work in progress project
-Tested on OSX 10.13 and Linux Debian/Ubuntu
+ofxMongo is a OpenFrameworks addons that allows you to connect with mongoDB server
 
 ![alt text](logo.png)
 
-Actually the addon allows you just to connect to MongoDB and insert one record.
+This is a work in progress project, actually the addons allows you to connect to the mongoDB and insert the records.
+I will porting others function soon.
+Tested on OSX 10.13 and Linux Debian/Ubuntu
+created by ![alt text](https://studio.io "Roberto Fazio Studio 2018")
 
-Very short documentation ( I will work on it soon )
+# Including ofxMongo
 
-in the ofApp.h file
+Using PG Inside your ofApp.h you will need one include:
+
 ```shell
 #include "ofxMongo.h"
+```
+Declare the mongoclient object
+```shell
 ofxMongo mongoclient;
 ```
 
-in the ofApp.cpp
+Inside your ofApp.cpp
+
 ```shell
 void ofApp::setup()
 {
-mongoclient.hello_mongo();
+    mongoclient.hello_mongo();
 }
 ```
 
-insert record
+mongoclient.insert
+
 ```shell
 void ofApp::keyPressed(int key)
 {
-if(key == '1')
-{
-int rnd = ofRandom(0.0f, 1000.0f);
-mongoclient.insert("myRandomField", ofToString(rnd));
-}
+    if(key == '1')
+    {
+        int rnd = ofRandom(0.0f, 1000.0f);
+        mongoclient.insert("myRandomField", ofToString(rnd));
+    }
 }
 ```
+
+# Installing MongoDB Community Edition
+
+Just follow the official MongoDB instruction
+
+
+![alt text](https://docs.mongodb.com/manual/installation/ "MongoDB")
 
 ## ** Linux **
 
