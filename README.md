@@ -4,7 +4,7 @@ OpenFrameworks addons to connect with mongoDB server created by Studio Roberto F
 Work in progress project
 Tested on OSX 10.13 and Linux Debian/Ubuntu
 
-![alt text]https://raw.githubusercontent.com/robertofazio/ofxMongo/master/logo.png
+![alt text](logo.png)
 
 Actually the addon allows you just to connect to MongoDB and insert one record.
 
