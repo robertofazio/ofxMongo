@@ -112,7 +112,7 @@ $ sudo make install
 
 /usr/local/include/* headers and /usr/local/lib/* static libraries are linked through the ADDON_PKG_CONFIG_LIBRARIES directive (addon_config.mk)
 
-## ** OSX 10.13 **
+## ** Mac OSX 10.12.6 **
 
 ## Prerequisites
 
@@ -214,7 +214,7 @@ The static libraries included in this addon were copied from:
 
 If you need/want to build your own libraries, follow steps above then copy the files from OS into the addon.
 
-### XCODE 9 Project Configuration Set-up
+### XCode Version 9.2 (9C40b) Mac OSX 10.12.6 Project Configuration Set-up
 
 Use projectGenerator adding ofxMongo.
 Once you have installed all the libs you have to add the frameworks to Xcode project
