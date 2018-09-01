@@ -1,16 +1,48 @@
-# Addon to connect with mongoDB server
+# ofxMongo
 
-## ** Linux ** 
+OpenFrameworks 0.10.0 addons to connect with mongoDB server created by Studio Roberto Fazio 2018
+Work in progress project
+Actually the addon allows you just to connect to MongoDB and insert one record.
+
+Very short documentation ( I will work on it soon )
+
+in the ofApp.h file
+```shell
+#include "ofxMongo.h"
+ofxMongo mongoclient;
+```
+
+in the ofApp.cpp
+```shell
+void ofApp::setup()
+{
+mongoclient.hello_mongo();
+}
+```
+
+insert record
+```shell
+void ofApp::keyPressed(int key)
+{
+if(key == '1')
+{
+int rnd = ofRandom(0.0f, 1000.0f);
+mongoclient.insert("myRandomField", ofToString(rnd));
+}
+}
+```
+
+## ** Linux **
 
 ## Prerequisites
 
-**mongo driver installation** 
+**mongo driver installation**
 
-### Install mongo-c 
+### Install mongo-c
 
-http://mongoc.org/libmongoc/current/installing.html 
-    version: 1.12.0
-    built on Debian 4.9.110-1
+http://mongoc.org/libmongoc/current/installing.html
+version: 1.12.0
+built on Debian 4.9.110-1
 
 according to "Build from tarball" instructions:
 ```shell
@@ -20,7 +52,7 @@ $ cd mongo-c-driver-1.12.0
 $ mkdir cmake-build
 $ cd cmake-build
 ```
-build command for static libraries: 
+build command for static libraries:
 ```shell
 $ cmake -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF -DCMAKE_BUILD_TYPE=Release -DENABLE_STATIC=ON ..
 $ make
@@ -30,16 +62,16 @@ $ sudo make install
 
 https://mongodb.github.io/mongo-cxx-driver/mongocxx-v3/installation/
 
-    version: 3.2.x
-    built on Debian 4.9.110-1
+version: 3.2.x
+built on Debian 4.9.110-1
 
 according to instructions:
 ```shell
 $ git clone https://github.com/mongodb/mongo-cxx-driver.git \
-    --branch releases/stable --depth 1
+--branch releases/stable --depth 1
 $ cd mongo-cxx-driver/build
 ```
-build command for static libraries: 
+build command for static libraries:
 ```shell
 $ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_SHARED_LIBS=OFF ..
 $ sudo make EP_mnmlstc_core
@@ -49,7 +81,7 @@ $ sudo make install
 
 /usr/local/include/* headers and /usr/local/lib/* static libraries are linked through the ADDON_PKG_CONFIG_LIBRARIES directive (addon_config.mk)
 
-## ** OSX ** 
+## ** OSX 10.13 **
 
 ## Prerequisites
 
@@ -63,7 +95,7 @@ make
 sudo make install
 ```
 
-### XCODE Project
+### XCODE 9 Project
 
 Use projectGenerator adding ofxMongo.
 
@@ -79,7 +111,7 @@ You should already see headers included in Build Settings>Header Search Paths as
 ../../../addons/ofxMongo/src
 ../../../addons/ofxMongo/include
 
-**mongo driver installation** 
+**mongo driver installation**
 
 The headers included in this addon were copied from:
 
@@ -106,14 +138,14 @@ and
 
 If you need/want to build your own libraries, follow steps below then copy the files from OS into the addon.
 
-### Install mongo-c 
+### Install mongo-c
 
 http://mongoc.org/libmongoc/current/installing.html
 
-    version: 1.12.0
+version: 1.12.0
 
 according to "Building on Mac OS X" instructions,
-install XCode CLI 
+install XCode CLI
 ```shell
 $ xcode-select --install
 ```
@@ -134,7 +166,7 @@ $ cd mongo-c-driver-1.12.0
 $ mkdir cmake-build
 $ cd cmake-build
 ```
-build command for static libraries: 
+build command for static libraries:
 ```shell
 $ cmake -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF -DCMAKE_BUILD_TYPE=Release -DENABLE_STATIC=ON ..
 $ make
@@ -144,18 +176,19 @@ $ sudo make install
 
 https://mongodb.github.io/mongo-cxx-driver/mongocxx-v3/installation/
 
-    version: 3.2.x
+version: 3.2.x
 
 according to instructions:
 ```shell
 $ git clone https://github.com/mongodb/mongo-cxx-driver.git \
-    --branch releases/stable --depth 1
+--branch releases/stable --depth 1
 $ cd mongo-cxx-driver/build
 ```
-build command for static libraries: 
+build command for static libraries:
 ```shell
 $ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_SHARED_LIBS=OFF ..
 $ sudo make EP_mnmlstc_core
 $ make
 $ sudo make install
 ```
+
