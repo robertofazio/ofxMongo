@@ -16,14 +16,18 @@
 
 meta:
 	ADDON_NAME = ofxMongo
-	ADDON_DESCRIPTION =
-	ADDON_AUTHOR =
-	ADDON_TAGS = 
-	ADDON_URL = 
+	ADDON_DESCRIPTION = Addon for MongoDB Server using the open source library libmongoc and libmongocxx
+	ADDON_AUTHOR = Roberto Fazio
+	ADDON_TAGS = "mongodb" "libmongoc"
+	ADDON_URL = https://github.com/robertofazio/ofxMongo
 
+# dependencies with other addons, a list of them separated by spaces
+# or use += in several lines
 common:
-
-	ADDON_INCLUDES = src 
+	# include search paths, this will be usually parsed from the file system
+	# but if the addon or addon libraries need special search paths they can be
+	# specified here separated by spaces or one per line using +=
+	ADDON_INCLUDES = src
 
 linux64:
     ADDON_PKG_CONFIG_LIBRARIES = libbson-1.0 libbsoncxx libbsoncxx-static libbson-static-1.0 libmongoc-1.0 libmongoc-ssl-1.0 libmongoc-static-1.0 libmongocxx libmongocxx-static
@@ -37,4 +41,3 @@ osx:
 	ADDON_LIBS += lib/osx/libmongocxx-static.a
 	ADDON_LIBS += lib/osx/libcrypto.a
 	ADDON_LIBS += lib/osx/libssl.a
-	
