@@ -87,6 +87,8 @@ $ sudo make install
 
 ### Build Cyrus
 https://cyrusimap.org/sasl/sasl/installation.html#quick-install-guide
+in my case I installed cyrus-sasl-2.1.27-rc8
+ftp://ftp.cyrusimap.org/cyrus-sasl/cyrus-sasl-2.1.27-rc8.tar.gz
 
 ```shell
 cd (directory it was untarred into)
