@@ -1,7 +1,11 @@
 # ofxMongo
 
-OpenFrameworks 0.10.0 addons to connect with mongoDB server created by Studio Roberto Fazio 2018
+OpenFrameworks addons to connect with mongoDB server created by Studio Roberto Fazio 2018
 Work in progress project
+Tested on OSX 10.13 and Linux Debian/Ubuntu
+
+![alt text]https://raw.githubusercontent.com/robertofazio/ofxMongo/master/logo.png
+
 Actually the addon allows you just to connect to MongoDB and insert one record.
 
 Very short documentation ( I will work on it soon )
