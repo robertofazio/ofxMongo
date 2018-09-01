@@ -236,7 +236,36 @@ You should already see headers included in Build Settings>Header Search Paths as
 
 ![alt text](https://github.com/robertofazio/ofxMongo/blob/master/HeaderSearchPath.png?raw=true)
 
+### addon_config.mk
 
+meta:
+	ADDON_NAME = ofxMongo
+	ADDON_DESCRIPTION = Addon for MongoDB Server using the open source library libmongoc and libmongocxx
+	ADDON_AUTHOR = Roberto Fazio
+	ADDON_TAGS = "mongodb" "libmongoc" 
+	ADDON_URL = https://github.com/robertofazio/ofxMongo
+
+// dependencies with other addons, a list of them separated by spaces 
+// or use += in several lines
+common:
+	// include search paths, this will be usually parsed from the file system
+	// but if the addon or addon libraries need special search paths they can be
+	// specified here separated by spaces or one per line using +=
+	ADDON_INCLUDES = src 
+
+linux64:
+    ADDON_PKG_CONFIG_LIBRARIES = libbson-1.0 libbsoncxx libbsoncxx-static libbson-static-1.0 libmongoc-1.0 libmongoc-ssl-1.0 libmongoc-static-1.0 libmongocxx libmongocxx-static
+
+// In OSX don't forget to include the path where static libs are compiled; in this case onto the ofxMongo/lib/osx/
+osx:
+	ADDON_INCLUDES += include
+	ADDON_LIBS = lib/osx/libbson-static-1.0.a
+	ADDON_LIBS += lib/osx/libbsoncxx-static.a
+	ADDON_LIBS += lib/osx/libmongoc-static-1.0.a
+	ADDON_LIBS += lib/osx/libmongocxx-static.a
+	ADDON_LIBS += lib/osx/libmongocxx-static.a
+	ADDON_LIBS += lib/osx/libcrypto.a
+	ADDON_LIBS += lib/osx/libssl.a
 
 
 
