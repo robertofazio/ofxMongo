@@ -2,23 +2,23 @@
 
 OpenFrameworks 0.10.0 addons to connect with mongoDB server created by Studio Roberto Fazio 2018
 Work in progress project
-Actually the addon allows you to connect to MongoDB and insert one record.
+Actually the addon allows you just to connect to MongoDB and insert one record.
 
 Very short documentation ( I will work on it soon ) 
 
-ofApp.h
+in the ofApp.h file
 ```shell
 #include "ofxMongo.h" 
 ofxMongo mongoclient;
-```shell
+```
 
-ofApp.cpp
+in the ofApp.cpp
 ```shell
 void ofApp::setup()
 {
     mongoclient.hello_mongo();
 }
-```shell
+```
 
 insert record
 ```shell
@@ -30,7 +30,7 @@ void ofApp::keyPressed(int key)
         mongoclient.insert("myRandomField", ofToString(rnd));
     }
 }
-```shell
+```
 
 ## ** Linux ** 
 
