@@ -222,7 +222,9 @@ Once you have installed all the libs you have to add the frameworks to Xcode pro
 in Xcode under Build Phase -> Linked Frameworks and Libraries
 
 Add Cyrus SASL : libsasl2.tbd
+
 Add resolv : libresolv.9.tbd
+
 Add Snappy : libsnappy.a
 
 ![alt text](https://github.com/robertofazio/ofxMongo/blob/master/%20LinkBinaryWithLibraries.png?raw=true)
