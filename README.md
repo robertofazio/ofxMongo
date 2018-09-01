@@ -1,17 +1,18 @@
 # Introduction
 
-ofxMongo is a OpenFrameworks addons that allows you to connect with mongoDB server
+ofxMongo is an OpenFrameworks addons that allows you to connect with mongoDB server
 
 ![alt text](logo.png)
 
 This is a work in progress project, actually the addons allows you to connect to the mongoDB and insert the records.
 I will porting others function soon.
 Tested on OSX 10.13 and Linux Debian/Ubuntu
-created by ![alt text](https://studio.io "Roberto Fazio Studio 2018")
+created by [Roberto Fazio Studio 2018](https://studiorf.io)
 
 # Including ofxMongo
 
-Using PG Inside your ofApp.h you will need one include:
+Create a new project with PG (Project Generator), and open the project file in your IDE.
+Inside your ofApp.h you will need to include:
 
 ```shell
 #include "ofxMongo.h"
