@@ -12,6 +12,7 @@ created by [Roberto Fazio Studio 2018](https://studiorf.io)
 # Including ofxMongo
 
 Create a new project with PG (Project Generator), and open the project file in your IDE.
+
 Inside your ofApp.h you will need to include:
 
 ```shell
@@ -48,8 +49,17 @@ void ofApp::keyPressed(int key)
 
 Just follow the official MongoDB instruction
 
-
 [MongoDB installation](https://docs.mongodb.com/manual/installation/)
+
+# Installing MongoDB Compass
+
+In addiction, if you want a GUI for MongoDB install MongoDB Compass for Mac, Linux, Win
+
+[MongoDB Compass](https://www.mongodb.com/products/compass)
+
+# Installation 
+
+You have to install mongo-c and mongo-cxx 
 
 ## ** Linux **
 
@@ -212,4 +222,9 @@ $ sudo make EP_mnmlstc_core
 $ make
 $ sudo make install
 ```
+
+### XCode Project Configuration 
+
+You have to link the static library
+![Link Binary with Libraries ](link-library.png)
 
