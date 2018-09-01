@@ -126,7 +126,7 @@ make
 sudo make install
 ```
 
-### XCODE 9 Project
+### XCODE 9 Project Configuration
 
 Use projectGenerator adding ofxMongo.
 
@@ -141,6 +141,8 @@ add libresolv.9.tbd
 You should already see headers included in Build Settings>Header Search Paths as
 ../../../addons/ofxMongo/src
 ../../../addons/ofxMongo/include
+
+![Link Binary with Libraries ](LinkBinaryWithLibraries.png)
 
 **mongo driver installation**
 
@@ -223,8 +225,5 @@ $ make
 $ sudo make install
 ```
 
-### XCode Project Configuration 
 
-You have to link the static library
-![Link Binary with Libraries ](link-library.png)
 
