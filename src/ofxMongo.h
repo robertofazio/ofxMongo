@@ -1,3 +1,7 @@
+/*
+// https://mongodb.github.io/mongo-cxx-driver/mongocxx-v3/tutorial/#make-a-connection
+*/
+
 #pragma once
 
 #include "ofMain.h"
@@ -22,11 +26,20 @@ using bsoncxx::builder::stream::document;
 
 class ofxMongo
 {
-    public:
-        void hello_mongo(); // hello_monocxx.cpp
-        void insert(string name, string field);
     
+public:
     
-    private:
-
+    ofxMongo();
+    ~ofxMongo();
+    
+    void init(string host, string port);
+    void insert(string dbName, string collectionName, string field, string value);
+    string getField;
+    string getValue;
+    
+private:
+    
+    mongocxx::instance instance{}; // This should be done only once.
+    string getHostName;
+    string getPortName;
 };

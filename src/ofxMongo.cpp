@@ -1,50 +1,52 @@
 #include "ofxMongo.h"
 
-void ofxMongo::hello_mongo()
+ofxMongo::ofxMongo()
 {
     
-    mongocxx::instance inst; // This should be done only once.
+}
 
+ofxMongo::~ofxMongo()
+{
+    
+}
+
+void ofxMongo::init(string host, string port)
+{
     try
     {
-
-        mongocxx::client client{mongocxx::uri{}};
-        /*
-        //const auto uri = mongocxx::uri uri("mongodb://localhost:27017");
-        const auto uri = mongocxx::uri::k_default_uri;
-
-        auto client = mongocxx::client(uri);
-        */
-        auto admin = client["admin"];
-        auto result = admin.run_command(make_document(kvp("isMaster", 1)));
-        std::cout << bsoncxx::to_json(result) << std::endl;
-        
-
+        mongocxx::uri uri("mongodb://" + host + ":" + port);
+        mongocxx::client client(uri);
+        cout << "Connected to MongoDB : " << "mongodb://" << host << ":" << port << endl;
+        getHostName = host;
+        getPortName = port;
     }
     catch (const std::exception& xcp)
     {
         std::cout << "connection failed: " << xcp.what() << std::endl;
     }
+    
+    
 }
 
-void ofxMongo::insert(string name, string field)
+
+void ofxMongo::insert(string dbName, string collectionName,string field, string value)
 {
-    
-    mongocxx::client conn{mongocxx::uri{}};
+    mongocxx::client conn{mongocxx::uri{"mongodb://" + getHostName + ":" + getPortName}};
     bsoncxx::builder::stream::document document{};
     
-    auto collection = conn["api-rest"]["users"];
+    auto collection = conn[dbName][collectionName];
+    collection.insert_one(make_document(kvp(field, value)));
     
-    // document << "hola" << "man";
-    //collection.insert_one(document.view());
-   
-    collection.insert_one(make_document(kvp(name, field)));
+    cout << "insert to collection record : "  << field << value << endl;
+    getField = field;
+    getValue = value;
     
-    auto cursor = collection.find({});
+//    auto cursor = collection.find({});
+//
+//    for (auto&& doc : cursor)
+//    {
+//        std::cout << bsoncxx::to_json(doc) << std::endl;
+//    }
     
-    for (auto&& doc : cursor)
-    {
-        std::cout << bsoncxx::to_json(doc) << std::endl;
-    }
     
 }
