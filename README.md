@@ -11,7 +11,7 @@ created by [Roberto Fazio Studio 2018](https://studiorf.io)
 
 # Including ofxMongo
 
-Create a new project with PG (Project Generator), and open the project file in your IDE.
+Create a new project with PG (Project Generator) and add ofxMongo. Open the project file in your IDE.
 
 Inside your ofApp.h you will need to include:
 
@@ -22,13 +22,22 @@ Declare the mongoclient object
 ```shell
 ofxMongo mongoclient;
 ```
+setup path 
+```shell
+    string host = "localhost";
+    string port = "27017";
+    string uri = "mongodb://" + host + ":" + port;
+    string db_name = "openFrameworksDB";
+    string collection_name = "of_collection";
+```
 
 Inside your ofApp.cpp
 
+Make a connection to MongoDB with the default URI "mongodb://localhost:27017"
 ```shell
 void ofApp::setup()
 {
-    mongoclient.hello_mongo();
+    mongoclient.init(host, port);
 }
 ```
 
@@ -37,13 +46,16 @@ mongoclient.insert
 ```shell
 void ofApp::keyPressed(int key)
 {
-    if(key == '1')
-    {
-        int rnd = ofRandom(0.0f, 1000.0f);
-        mongoclient.insert("myRandomField", ofToString(rnd));
-    }
+        // insert
+        int rnd = ofRandom(0.0f, 100000.0f);
+        mongoclient.insert(db_name, collection_name, "myRandomField", ofToString(rnd));
 }
 ```
+# example-MongoDB_connection
+
+Use the example-MongoDB_connection Xcode ( Work in progress ) 
+
+![alt text](thumbs/screenshot.png)
 
 # Installing MongoDB Community Edition
 
