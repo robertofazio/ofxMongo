@@ -2,7 +2,7 @@
 
 ofxMongo is an OpenFrameworks addons that allows you to connect with mongoDB server
 
-![alt text](thumbs/logo.png)
+![alt text](https://github.com/robertofazio/ofxMongo/blob/master/thumbs/logo.png)
 
 This is a work in progress project, actually the addons allows you to connect to the mongoDB and insert the records.
 I will porting others function soon.
@@ -55,7 +55,7 @@ void ofApp::keyPressed(int key)
 
 Use the example-MongoDB_connection Xcode ( Work in progress ) 
 
-![alt text](thumbs/screenshot.png)
+![alt text](https://github.com/robertofazio/ofxMongo/blob/master/thumbs/screenshot.png)
 
 # Installing MongoDB Community Edition
 
