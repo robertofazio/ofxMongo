@@ -36,6 +36,10 @@ void ofApp::keyPressed(int key)
         int rnd = ofRandom(0.0f, 100000.0f);
         mongoclient.insert(db_name, collection_name, "myRandomField", ofToString(rnd));
     }
+    else if(key == '2')
+    {
+        mongoclient.createDocument();
+    }
 }
 
 //--------------------------------------------------------------
