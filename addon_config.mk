@@ -38,6 +38,5 @@ osx:
 	ADDON_LIBS += lib/osx/libbsoncxx-static.a
 	ADDON_LIBS += lib/osx/libmongoc-static-1.0.a
 	ADDON_LIBS += lib/osx/libmongocxx-static.a
-	ADDON_LIBS += lib/osx/libmongocxx-static.a
 	ADDON_LIBS += lib/osx/libcrypto.a
 	ADDON_LIBS += lib/osx/libssl.a

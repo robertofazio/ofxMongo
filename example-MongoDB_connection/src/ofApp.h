@@ -22,12 +22,12 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    ofxMongo mongoclient;
-    
-    string host = "localhost";
-    string port = "27017";
-    string uri = "mongodb://" + host + ":" + port;
-    string db_name = "openFrameworksDB";
-    string collection_name = "of_collection";
+		ofxMongo mongoclient;
+		
+		string host = "localhost";
+		string port = "27017";
+		string uri = "mongodb://" + host + ":" + port;
+		string db_name = "openFrameworksDB";
+		string collection_name = "of_collection";
 
 };
