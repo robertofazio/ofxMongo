@@ -38,7 +38,31 @@ void ofApp::keyPressed(int key)
     }
     else if(key == '2')
     {
-        mongoclient.createDocument();
+        // create and insert draft
+        string key1 = "key1";
+        string key2 = "key2";
+        string key3 = "key3";
+        string key4 = "key4";
+        string key5 = "key5";
+        double d = static_cast<double>(ofRandom(0.0, 1000.0));
+        float f = static_cast<float>(ofRandom(0.0, 1000.0));
+        int i = static_cast<int>(ofRandom(0.0, 1000.0));;
+        bool b = true;
+        string val = "strVal";
+        
+        mongoclient.addToDraft(key1, i);
+        mongoclient.addToDraft(key2, d);
+        mongoclient.addToDraft(key3, f);
+        mongoclient.addToDraft(key4, val);
+        mongoclient.addToDraft(key5, b);
+        
+        mongoclient.insertDraft(db_name, collection_name);
+    }
+    
+    if(key == '3')
+    {
+        // clear draft
+        mongoclient.clearDraft();
     }
 }
 
