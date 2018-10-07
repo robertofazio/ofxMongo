@@ -29,8 +29,10 @@ common:
 	# specified here separated by spaces or one per line using +=
 	ADDON_INCLUDES = src
 
+
 linux64:
-    ADDON_PKG_CONFIG_LIBRARIES = libbson-1.0 libbsoncxx libbsoncxx-static libbson-static-1.0 libmongoc-1.0 libmongoc-ssl-1.0 libmongoc-static-1.0 libmongocxx libmongocxx-static
+    ADDON_PKG_CONFIG_LIBRARIES = libbson-1.0 libmongoc-1.0 libmongocxx libbsoncxx libmongoc-ssl-1.0 libbson-static-1.0 libmongoc-static-1.0 
+
 
 osx:
 	ADDON_INCLUDES += include
